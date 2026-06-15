@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abandono del TARV - CDVIR La Paz (20 Diapositivas)</title>
+    <!-- Fuentes premium de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Variables de Diseño */
+        :root {
+            --navy: #0D2B4E;
+            --navy-light: #163E6E;
+            --teal: #0A7B8A;
+            --teal-light: #14A5B5;
+            --coral: #E85D4A;
+            --coral-light: #FF7B69;
+            --gold: #F0A500;
+            --white: #FFFFFF;
+            --off-white: #F4F8FB;
+            --gray: #8097A8;
+            --light-gray: #D8E4EC;
+            --text-dark: #1A2F42;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(20, 165, 181, 0.2);
+            --transition-speed: 0.4s;
+        }
+
+        /* Reset Global */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            background-color: #050E17;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Contenedor Principal de Presentación */
+        .presentation-frame {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 1400px;
+            height: 100%;
+            max-height: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Diapositiva Individual */
+        .slide {
+            position: absolute;
+            width: 94%;
+            height: 90%;
+            background: linear-gradient(135deg, #091F36 0%, #040F1B 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 50px 60px;
+            opacity: 0;
+            transform: scale(0.95) translate3d(50px, 0, 0);
+            pointer-events: none;
+            transition: opacity var(--transition-speed) ease, 
+                        transform var(--transition-speed) cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* Diapositiva Activa */
+        .slide.active {
+            opacity: 1;
+            transform: scale(1) translate3d(0, 0, 0);
+            pointer-events: auto;
+            z-index: 10;
+        }
+
+        /* Efectos de fondo abstracto */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(10, 123, 138, 0.15) 0%, transparent 75%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -20%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(232, 93, 74, 0.08) 0%, transparent 75%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Encabezados de Diapositiva */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .slide-tag {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--teal-light);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .slide-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--white);
+            margin-top: 5px;
+            line-height: 1.2;
+        }
+
+        .slide-title span {
+            color: var(--coral);
+        }
+
+        .slide-institution {
+            text-align: right;
+            font-size: 11px;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Contenido de Diapositiva */
+        .slide-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Estructuras de Layout */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .grid-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .grid-5col {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        /* Tipografías y Textos */
+        p.desc-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--light-gray);
+            margin-bottom: 15px;
+        }
+
+        ul.styled-list {
+            list-style: none;
+        }
+
+        ul.styled-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--light-gray);
+        }
+
+        ul.styled-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--teal-light);
+            font-size: 18px;
+        }
+
+        ul.styled-list.coral li::before {
+            color: var(--coral);
+        }
+
+        /* Tarjetas de Información (Cards) */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--teal-light);
+            box-shadow: 0 10px 20px rgba(10, 123, 138, 0.15);
+        }
+
+        .card-header-icon {
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        /* Tablas */
+        .table-wrapper {
+            background: rgba(5, 14, 23, 0.4);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: var(--navy-light);
+            color: var(--white);
+            padding: 14px 18px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 12px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 13px;
+            color: var(--light-gray);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr.highlight-row {
+            background: rgba(232, 93, 74, 0.08);
+        }
+
+        /* Pie de Diapositiva */
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* Barra de Control de Navegación */
+        .control-bar {
+            width: 100%;
+            background-color: #030A11;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 100;
+        }
+
+        .progress-container {
+            flex-grow: 1;
+            margin: 0 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .progress-bar-bg {
+            flex-grow: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 5%;
+            background: linear-gradient(90deg, var(--teal-light), var(--coral));
+            border-radius: 3px;
+            transition: width var(--transition-speed) ease;
+        }
+
+        .slide-counter {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            color: var(--white);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav-btn {
+            background: var(--navy-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--teal);
+            transform: scale(1.05);
+            border-color: var(--teal-light);
+        }
+
+        .nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Menú de Agenda / Saltar a Diapositiva */
+        .agenda-btn {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .agenda-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--teal-light);
+        }
+
+        /* Drawer de Agenda */
+        .agenda-drawer {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 320px;
+            height: 100vh;
+            background: #061220;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: left 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px;
+        }
+
+        .agenda-drawer.open {
+            left: 0;
+        }
+
+        .agenda-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .agenda-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .agenda-close {
+            background: none;
+            border: none;
+            color: var(--gray);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .agenda-close:hover {
+            color: var(--coral);
+        }
+
+        .agenda-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            list-style: none;
+            padding-right: 5px;
+        }
+
+        .agenda-item {
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--light-gray);
+            margin-bottom: 5px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .agenda-item:hover, .agenda-item.active {
+            background: var(--navy-light);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .agenda-item.active {
+            border-left: 3px solid var(--teal-light);
+        }
+
+        /* Overlay para cerrar Drawer */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+            z-index: 999;
+            display: none;
+        }
+
+        .drawer-overlay.active {
+            display: block;
+        }
+
+        /* Estructuras Especiales de Diapositiva */
+        /* Portada */
+        .cover-slide {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cover-esae {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--teal-light);
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .cover-main-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin: 15px 0;
+            background: linear-gradient(135deg, #FFF 30%, var(--teal-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cover-highlight {
+            color: var(--coral);
+            display: block;
+            margin-top: 10px;
+            background: linear-gradient(135deg, var(--coral-light) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cover-meta {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 15px 40px;
+            display: inline-block;
+        }
+
+        /* Gráfico de Barras Simple en CSS */
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .chart-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chart-label {
+            width: 160px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--light-gray);
+            text-align: right;
+        }
+
+        .chart-bar-bg {
+            flex-grow: 1;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .chart-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--navy-light) 0%, var(--teal-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--white);
+            border-radius: 6px;
+            transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .chart-bar-fill.accent {
+            background: linear-gradient(90deg, var(--navy-light) 0%, var(--coral) 100%);
+        }
+
+        .chart-bar-fill.gold {
+            background: linear-gradient(90deg, var(--navy-light) 0%, var(--gold) 100%);
+        }
+
+        /* Visualizador de Porcentaje Redondo */
+        .radial-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .circle-svg {
+            width: 160px;
+            height: 160px;
+            transform: rotate(-90deg);
+        }
+
+        .circle-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.05);
+            stroke-width: 12;
+        }
+
+        .circle-stroke {
+            fill: none;
+            stroke: var(--teal-light);
+            stroke-width: 12;
+            stroke-linecap: round;
+            stroke-dasharray: 440;
+            stroke-dashoffset: 440; /* Se controla vía inline script */
+            transition: stroke-dashoffset 1s ease-out;
+        }
+
+        .circle-stroke.coral {
+            stroke: var(--coral);
+        }
+
+        .circle-stroke.gold {
+            stroke: var(--gold);
+        }
+
+        .radial-inner-text {
+            position: absolute;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        /* Big Stat Block */
+        .big-stat-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            background: rgba(232, 93, 74, 0.05);
+            border: 1px dashed var(--coral);
+            border-radius: 20px;
+            padding: 35px;
+            margin-top: 15px;
+        }
+
+        .big-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 96px;
+            font-weight: 800;
+            color: var(--coral);
+            line-height: 1;
+        }
+
+        .big-stat-label {
+            font-size: 18px;
+            line-height: 1.5;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 30px 40px;
+            }
+            .slide-title {
+                font-size: 26px;
+            }
+            .cover-main-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Overlay y Drawer para Saltar Diapositivas -->
+    <div class="drawer-overlay" id="overlay"></div>
+    <div class="agenda-drawer" id="agenda-drawer">
+        <div class="agenda-header">
+            <span class="agenda-title">Estructura del Proyecto</span>
+            <button class="agenda-close" id="close-drawer"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="agenda-list" id="agenda-list">
+            <!-- Cargado dinámicamente -->
+        </ul>
+    </div>
+
+    <!-- Contenedor del Slide App -->
+    <div class="presentation-frame" id="presentation">
+
+        <!-- SLIDE 1: PORTADA -->
+        <div class="slide active" data-title="Portada" data-tag="Proyecto de Investigación">
+            <div class="slide-header">
+                <span class="slide-tag">Trabajo de Grado</span>
+                <span class="slide-institution">ESAE La Paz - Gestión Pública 2026</span>
+            </div>
+            <div class="slide-body cover-slide">
+                <p class="cover-esae">Instituto Técnico ESAE</p>
+                <h1 class="cover-main-title">
+                    Factores Asociados al
+                    <span class="cover-highlight">Abandono del TARV</span>
+                    en Pacientes con VIH
+                </h1>
+                <p style="font-size: 18px; color: var(--gold); font-weight: 500; margin-top: 15px;">
+                    <i class="fas fa-hospital-user"></i> Centro Departamental de Vigilancia, Información y Referencia (CDVIR) La Paz
+                </p>
+                <div class="cover-meta">
+                    <p style="font-weight: 700; color: var(--white);">Integrantes:</p>
+                    <p>Huchani Vargas Y. · Tarqui Ticona S. · Apala Ignacio R. · Quispe Michua A. · Nina Bautista A.</p>
+                    <p style="margin-top: 5px; color: var(--teal-light); font-size: 12px;">Asignatura: Estadística en la Gestión Pública · Docente: José Antonio Villalba Choque · 1-GAP</p>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>La Paz - Bolivia, 2026</span>
+                <span>Diapositiva 1 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: AGENDA DE LA PRESENTACIÓN -->
+        <div class="slide" data-title="Agenda de la Presentación" data-tag="Estructura Temática">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Estructura General</span>
+                    <h2 class="slide-title">Ruta del Proyecto en 20 Eslabones</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-3col">
+                    <div class="card">
+                        <div class="card-header-icon"><i class="fas fa-align-left text-teal"></i></div>
+                        <h3 class="card-title">I. Marco Introductorio</h3>
+                        <p style="font-size: 12px; color: var(--gray);">Diapositivas 3 - 8. Planteamiento del problema, justificación, objetivos del estudio, y marco causal de abandono.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header-icon"><i class="fas fa-book text-coral"></i></div>
+                        <h3 class="card-title">II. Sustentación Teórica</h3>
+                        <p style="font-size: 12px; color: var(--gray);">Diapositivas 9 - 11. Bases virológicas, farmacológicas del TARV, y modelos conductuales de creencias de salud (HBM / TPB).</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header-icon"><i class="fas fa-vials text-gold"></i></div>
+                        <h3 class="card-title">III. Metodología</h3>
+                        <p style="font-size: 12px; color: var(--gray);">Diapositivas 12 - 14. Operacionalización de variables independientes/dependientes, tamaño de muestra probabilística y cuestionario.</p>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 20px; padding: 15px 25px;">
+                    <h3 class="card-title" style="font-size: 14px; color: var(--teal-light);"><i class="fas fa-chart-pie"></i> IV. Resultados y Propuestas (Diapositivas 15 - 20)</h3>
+                    <p style="font-size: 12px; color: var(--light-gray);">Desglose de los 20 cuadros de distribución de frecuencias y propuesta de estrategias de intervención como seguimiento telefónico y desconcentración de fármacos.</p>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Gestión Pública 1-GAP</span>
+                <span>Diapositiva 2 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: INTRODUCCIÓN Y CONTEXTO GLOBAL -->
+        <div class="slide" data-title="Introducción y Contexto" data-tag="Capítulo I">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Contextualización</span>
+                    <h2 class="slide-title">El Desafío del VIH/SIDA en el Siglo XXI</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div>
+                        <p class="desc-text">La epidemia del VIH continúa siendo uno de los desafíos más persistentes para la salud pública internacional.</p>
+                        <p class="desc-text">El desarrollo de la <strong>Terapia Antirretroviral (TARV)</strong> supuso una revolución científica y social, transformando un diagnóstico mortal a corto plazo en una <strong>enfermedad de curso crónico y manejable</strong>.</p>
+                        <p class="desc-text" style="color: var(--teal-light); font-weight: 600;">La adherencia sostenida permite la supresión viral, deteniendo la transmisión bajo el principio "Indetectable = Intransmisible" (I=I).</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title" style="color: var(--gold);"><i class="fas fa-globe"></i> Perspectiva Regional</h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray); margin-bottom: 10px;">En América Latina, asegurar el acceso universal a los antirretrovirales ha sido el eje prioritario promovido por la Organización Panamericana de la Salud (OPS).</p>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray);">Sin embargo, las barreras del entorno de vida del paciente continúan impidiendo sostener coberturas de adherencia óptimas de manera uniforme.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Introducción</span>
+                <span>Diapositiva 3 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: EL CONTEXTO EN BOLIVIA Y CDVIR LA PAZ -->
+        <div class="slide" data-title="Contexto Nacional" data-tag="Capítulo I">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">CDVIR La Paz</span>
+                    <h2 class="slide-title">Gratuidad del TARV vs. Retención Efectiva</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div class="card">
+                        <h3 class="card-title" style="color: var(--teal-light);"><i class="fas fa-balance-scale"></i> Marco Legal Protector</h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray); margin-bottom: 15px;">La <strong>Ley N° 3729</strong> garantiza el tratamiento antirretroviral de manera enteramente gratuita e integral a nivel de financiamiento estatal directo en toda Bolivia.</p>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray);">Pese a este gran logro, la dotación del fármaco no es suficiente. El verdadero reto reside en la retención persistente a mediano y largo plazo dentro del ecosistema de salud.</p>
+                    </div>
+                    <div>
+                        <h3 class="card-title" style="color: var(--coral);"><i class="fas fa-user-clock"></i> CDVIR La Paz</h3>
+                        <p class="desc-text">Como centro de referencia departamental principal para personas viviendo con VIH, el CDVIR se enfrenta a la alta demanda que satura el seguimiento personalizado de pacientes, propiciando que una tasa crítica de pacientes suspendan el tratamiento.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Antecedentes</span>
+                <span>Diapositiva 4 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: DESCRIPCIÓN Y PLANTEAMIENTO DEL PROBLEMA -->
+        <div class="slide" data-title="Problematización" data-tag="Capítulo II">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">El Problema Científico</span>
+                    <h2 class="slide-title">La Brecha Crítica en la Continuidad Clínica</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <p class="desc-text">El abandono terapéutico del TARV no se restringe a un simple descuido biológico de la persona; representa una fractura compleja condicionada por barreras materiales e interpersonales.</p>
+                <div class="grid-3col" style="margin-top: 20px;">
+                    <div class="card" style="border-top: 4px solid var(--teal-light);">
+                        <h4 style="color: var(--teal-light); font-weight: 700; margin-bottom: 10px;">¿DÓNDE?</h4>
+                        <p style="font-size: 12px; color: var(--light-gray);">Centro Departamental de Vigilancia, Información y Referencia (CDVIR) La Paz.</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--gold);">
+                        <h4 style="color: var(--gold); font-weight: 700; margin-bottom: 10px;">¿QUIÉNES?</h4>
+                        <p style="font-size: 12px; color: var(--light-gray);">Pacientes diagnosticados con VIH+ bajo esquema de tratamiento antirretroviral.</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--coral);">
+                        <h4 style="color: var(--coral); font-weight: 700; margin-bottom: 10px;">¿PROBLEMA?</h4>
+                        <p style="font-size: 12px; color: var(--light-gray);">La brecha existente entre la disponibilidad gratuita del fármaco y la retención efectiva del usuario.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Formulación del Problema</span>
+                <span>Diapositiva 5 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: EL MAPA CAUSAL DE ABANDONO -->
+        <div class="slide" data-title="Causas del Abandono" data-tag="Capítulo II">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Problematización</span>
+                    <h2 class="slide-title">El Mapa Causal Multidimensional</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-5col">
+                    <div class="card" style="padding: 15px; text-align: center;">
+                        <i class="fas fa-map-marked-alt" style="font-size: 28px; color: var(--teal-light); margin-bottom: 10px;"></i>
+                        <h4 style="font-size: 12px; font-weight: 700; margin-bottom: 8px;">1. Geografía</h4>
+                        <p style="font-size: 10px; color: var(--gray);">Domicilios lejanos, centralización en La Paz.</p>
+                    </div>
+                    <div class="card" style="padding: 15px; text-align: center;">
+                        <i class="fas fa-hand-holding-usd" style="font-size: 28px; color: var(--coral); margin-bottom: 10px;"></i>
+                        <h4 style="font-size: 12px; font-weight: 700; margin-bottom: 8px;">2. Economía</h4>
+                        <p style="font-size: 10px; color: var(--gray);">Pérdida de jornada laboral y costos de pasajes.</p>
+                    </div>
+                    <div class="card" style="padding: 15px; text-align: center;">
+                        <i class="fas fa-user-slash" style="font-size: 28px; color: var(--gold); margin-bottom: 10px;"></i>
+                        <h4 style="font-size: 12px; font-weight: 700; margin-bottom: 8px;">3. Estigma</h4>
+                        <p style="font-size: 10px; color: var(--gray);">Temor a la revelación y discriminación social.</p>
+                    </div>
+                    <div class="card" style="padding: 15px; text-align: center;">
+                        <i class="fas fa-info-circle" style="font-size: 28px; color: #5E35B1; margin-bottom: 10px;"></i>
+                        <h4 style="font-size: 12px; font-weight: 700; margin-bottom: 8px;">4. Información</h4>
+                        <p style="font-size: 10px; color: var(--gray);">Falta de educación sobre consecuencias.</p>
+                    </div>
+                    <div class="card" style="padding: 15px; text-align: center;">
+                        <i class="fas fa-road" style="font-size: 28px; color: #2E7D32; margin-bottom: 10px;"></i>
+                        <h4 style="font-size: 12px; font-weight: 700; margin-bottom: 8px;">5. Coyuntura</h4>
+                        <p style="font-size: 10px; color: var(--gray);">Bloqueos y huelgas que impiden traslado.</p>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; text-align: center;">
+                    <p style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; color: var(--white); font-weight: 500;">
+                        Pregunta Científica: ¿Cuáles son los factores asociados al abandono del TARV en pacientes con VIH en el CDVIR La Paz?
+                    </p>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Capítulo II · Problematización</span>
+                <span>Diapositiva 6 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: OBJETIVOS DE LA INVESTIGACIÓN -->
+        <div class="slide" data-title="Objetivos" data-tag="Capítulo III">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Planificación Científica</span>
+                    <h2 class="slide-title">Objetivos General y Específicos</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="card" style="background: rgba(10, 123, 138, 0.05); border: 1px solid var(--teal-light); margin-bottom: 25px;">
+                    <h3 style="font-size: 15px; color: var(--teal-light); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;"><i class="fas fa-bullseye"></i> Objetivo General</h3>
+                    <p style="font-size: 15px; line-height: 1.6; color: var(--white);">
+                        Identificar y analizar los factores asociados al abandono del tratamiento antirretroviral (TARV) en pacientes con VIH atendidos en el CDVIR La Paz, con el fin de proponer estrategias viables que mejoren la adherencia y la retención del paciente.
+                    </p>
+                </div>
+                <div class="grid-2col">
+                    <ul class="styled-list">
+                        <li>Determinar la prevalencia del abandono mediante registros institucionales.</li>
+                        <li>Identificar y cuantificar la relación entre barreras socio-geográficas y el abandono.</li>
+                    </ul>
+                    <ul class="styled-list">
+                        <li>Analizar la influencia del estigma social y la falta de información clínica.</li>
+                        <li>Evaluar el impacto de la coyuntura sociopolítica boliviana en el acceso regular.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Objetivos</span>
+                <span>Diapositiva 7 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: JUSTIFICACIÓN DE LA INVESTIGACIÓN -->
+        <div class="slide" data-title="Justificación" data-tag="Capítulo III">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Relevancia</span>
+                    <h2 class="slide-title">Por qué es crucial este estudio de campo</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-3col">
+                    <div class="card">
+                        <div class="card-header-icon" style="color: var(--teal-light);"><i class="fas fa-stethoscope"></i></div>
+                        <h4 class="card-title">Impacto Clínico</h4>
+                        <p style="font-size: 12px; color: var(--light-gray); line-height: 1.6;">Previene la resistencia a los medicamentos y la falla de esquemas terapéuticos primarios, disminuyendo la morbimortalidad.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header-icon" style="color: var(--coral);"><i class="fas fa-users"></i></div>
+                        <h4 class="card-title">Salud Comunitaria</h4>
+                        <p style="font-size: 12px; color: var(--light-gray); line-height: 1.6;">Al sostener cargas virales indetectables, se interrumpe el ciclo de transmisión del virus en el departamento de La Paz.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header-icon" style="color: var(--gold);"><i class="fas fa-funnel-dollar"></i></div>
+                        <h4 class="card-title">Gestión Pública</h4>
+                        <p style="font-size: 12px; color: var(--light-gray); line-height: 1.6;">Reduce el gasto del Estado derivado de hospitalizaciones por infecciones oportunistas y necesidad de costosos esquemas de segunda línea.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Justificación</span>
+                <span>Diapositiva 8 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: MARCO TEÓRICO I - VIROLOGÍA E INMUNOLOGÍA -->
+        <div class="slide" data-title="Marco Teórico: Virología" data-tag="Capítulo IV">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Fundamentación Científica</span>
+                    <h2 class="slide-title">Patogenia del VIH e Inmunidad</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div>
+                        <p class="desc-text">El Virus de la Inmunodeficiencia Humana (VIH) es un retrovirus ARN que infecta de manera selectiva a los <strong>linfocitos T cooperadores CD4+</strong>, mermando progresivamente el sistema inmunológico.</p>
+                        <ul class="styled-list">
+                            <li><strong>CD4 < 200/mm³:</strong> Fase SIDA, con alto riesgo de contraer infecciones oportunistas graves.</li>
+                            <li><strong>Carga Viral:</strong> El biomarcador de la velocidad de replicación viral activa en plasma.</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <i class="fas fa-virus" style="font-size: 54px; color: var(--coral); margin-bottom: 20px;"></i>
+                        <h4 style="color: var(--white); font-weight: 700; margin-bottom: 10px;">Indetectable = Intransmisible (I=I)</h4>
+                        <p style="font-size: 12px; color: var(--light-gray); line-height: 1.7;">La supresión viral estable disminuye las copias de ARN del virus en plasma a niveles no detectables por reactivos de PCR, anulando el riesgo de contagio sexual.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Bases Teóricas</span>
+                <span>Diapositiva 9 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: MARCO TEÓRICO II - FARMACOLOGÍA Y RESISTENCIA -->
+        <div class="slide" data-title="Marco Teórico: Farmacología" data-tag="Capítulo IV">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Sustento Farmacéutico</span>
+                    <h2 class="slide-title">El Protocolo TARV y Selección de Resistencia</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4 class="card-title" style="color: var(--teal-light);"><i class="fas fa-pills"></i> Terapia Combinada HAART</h4>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray); margin-bottom: 10px;">La terapia estándar combina habitualmente un inhibidor de la integrasa (Dolutegravir) con dos inhibidores análogos de la transcriptasa inversa (TDF/3TC).</p>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray);">Este bloqueo multifásico inhibe la replicación celular en etapas secuenciales y distintas de su ciclo de vida.</p>
+                    </div>
+                    <div>
+                        <h3 class="card-title" style="color: var(--coral);"><i class="fas fa-biohazard"></i> El Peligro de la Mutación</h3>
+                        <p class="desc-text">Para evitar la selección de variantes genéticas resistentes, se requiere una <strong>adherencia estricta mayor al 95%</strong> en la dosificación diaria de fármacos.</p>
+                        <p class="desc-text" style="color: var(--gold); font-weight: 600;">La interrupción episódica retira la presión de inhibición virológica, permitiendo un rebote inmediato con resistencia a medicamentos de primera línea.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Bases Farmacológicas</span>
+                <span>Diapositiva 10 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: MARCO TEÓRICO III - MODELOS DE CONDUCTA EN SALUD -->
+        <div class="slide" data-title="Marco Teórico: Conducta" data-tag="Capítulo IV">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Ciencias del Comportamiento</span>
+                    <h2 class="slide-title">Modelos HBM y Teoría del Comportamiento Planificado</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div>
+                        <p class="desc-text">La decisión de adherencia o cese voluntario se explica a través de teorías conductuales de la salud:</p>
+                        <p class="desc-text"><strong>Modelo de Creencias en Salud (HBM):</strong> Postula que el paciente sopesa la <em>severidad de la enfermedad</em> frente a las <em>barreras percibidas</em> (estigma, distancia, problemas económicos).</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title" style="color: var(--gold);"><i class="fas fa-brain"></i> Teoría del Comportamiento Planificado (TPB)</h4>
+                        <p style="font-size: 12px; line-height: 1.6; color: var(--light-gray); margin-bottom: 10px;">Propone que la adherencia real depende de la "intención conductual", regulada de forma directa por:</p>
+                        <ul class="styled-list" style="font-size: 11px;">
+                            <li>La actitud personal hacia los beneficios del medicamento.</li>
+                            <li>La norma subjetiva (el estigma y la aceptación social).</li>
+                            <li>El control percibido (presencia de barreras de coyuntura social).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Modelos Teóricos</span>
+                <span>Diapositiva 11 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: DISEÑO METODOLÓGICO -->
+        <div class="slide" data-title="Marco Metodológico" data-tag="Capítulo V">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Metodología de la Investigación</span>
+                    <h2 class="slide-title">Diseño de Investigación y Enfoques Aplicados</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-3col">
+                    <div class="card" style="border-top: 4px solid var(--teal-light);">
+                        <div class="card-header-icon" style="color: var(--teal-light);"><i class="fas fa-chart-bar"></i></div>
+                        <h4 class="card-title">Enfoque Cuantitativo</h4>
+                        <p style="font-size: 12px; color: var(--light-gray); line-height: 1.6;">Basado en la cuantificación estadística de variables numéricas y en la aplicación estructurada de encuestas.</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--coral);">
+                        <div class="card-header-icon" style="color: var(--coral);"><i class="fas fa-project-diagram"></i></div>
+                        <h4 class="card-title">Descriptivo-Correlacional</h4>
+                        <p style="font-size: 12px; color: var(--light-gray); line-height: 1.6;">Describe frecuencias demográficas y evalúa el nivel de correlación de los factores con el cese clínico de toma.</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--gold);">
+                        <div class="card-header-icon" style="color: var(--gold);"><i class="fas fa-calendar-alt"></i></div>
+                        <h4 class="card-title">Transversal No Experimental</h4>
+                        <p style="font-size: 12px; color: var(--light-gray); line-height: 1.6;">Toma de datos en un único momento del tiempo sin manipular deliberadamente las variables del paciente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Marco Metodológico</span>
+                <span>Diapositiva 12 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: POBLACIÓN, MUESTRA Y MUESTREO -->
+        <div class="slide" data-title="Población y Muestra" data-tag="Capítulo V">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Universo de Estudio</span>
+                    <h2 class="slide-title">Cálculo Probabilístico de la Muestra</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div>
+                        <p class="desc-text"><strong>Población Finita:</strong> N = 6.800 pacientes VIH+ registrados y atendidos activamente en el CDVIR La Paz.</p>
+                        <p class="desc-text">Se aplicó la fórmula de muestreo aleatorio simple para poblaciones conocidas de tamaño finito:</p>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; text-align: center; font-family: monospace; font-size: 15px; margin: 15px 0;">
+                            n = [ N * Z² * p * q ] / [ (N-1)*E² + Z²*p*q ]
+                        </div>
+                        <p style="font-size: 13px; color: var(--gray);">Donde: Z = 1.96 (Confianza 95%), E = 6.5% (Margen de Error), p = 0.50 (Varianza máxima).</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 72px; font-weight: 800; color: var(--teal-light); display: block; line-height: 1;">221</span>
+                        <span style="font-size: 14px; font-weight: 700; color: var(--white); display: block; margin-top: 10px;">Registros Muestrales Efectivos</span>
+                        <p style="font-size: 12px; color: var(--gray); margin-top: 10px; line-height: 1.6;">Selección de sujetos por muestreo probabilístico aleatorio simple para evitar sesgos sistemáticos en los hallazgos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Cálculo Metodológico</span>
+                <span>Diapositiva 13 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: OPERACIONALIZACIÓN DE VARIABLES -->
+        <div class="slide" data-title="Operacionalización" data-tag="Capítulo V">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Estructura Operativa</span>
+                    <h2 class="slide-title">Matriz Conceptual de Variables Evaluadas</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Dimensión Clave</th>
+                                <th>Indicadores Representativos</th>
+                                <th>Ítems del Instrumento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="color: var(--teal-light); font-weight: 700;">Variable Independiente:<br>Factores de Abandono</td>
+                                <td>Geográfico / Económico<br>Estigma / Información<br>Coyuntura Sociopolítica</td>
+                                <td>Tiempo y costo de transporte<br>Discriminación, conocimientos del TARV<br>Impacto de huelgas y bloqueos</td>
+                                <td>Ítems 1 al 14<br><span style="font-size: 11px; color: var(--gray);">(Likert 1-5 y Dicotómicos)</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td style="color: var(--coral); font-weight: 700;">Variable Dependiente:<br>Abandono del TARV</td>
+                                <td>Adherencia / Continuidad<br>Percepción Clínica</td>
+                                <td>Frecuencia de olvidos de toma diaria<br>Interrupciones acumuladas de >30 días</td>
+                                <td>Ítems 15 al 20<br><span style="font-size: 11px; color: var(--gray);">(Likert 1-5 y Dicotómicos)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Matriz de Variables</span>
+                <span>Diapositiva 14 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: RESULTADOS - DIMENSIÓN GEOGRÁFICA (P1 Y P2) -->
+        <div class="slide" data-title="Resultados: Geografía" data-tag="Capítulo VI">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Dimensión Geográfica</span>
+                    <h2 class="slide-title">Análisis de la Distancia y Costo de Traslado</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4 class="card-title" style="color: var(--teal-light);"><i class="fas fa-bus"></i> Pregunta 1: Dificultad por Distancia</h4>
+                        <div class="bar-chart">
+                            <div class="chart-row"><div class="chart-label">Siempre / Casi siempre</div><div class="chart-bar-bg"><div class="chart-bar-fill accent" style="width: 19%;">19%</div></div></div>
+                            <div class="chart-row"><div class="chart-label">A veces</div><div class="chart-bar-bg"><div class="chart-bar-fill" style="width: 58%;">58%</div></div></div>
+                            <div class="chart-row"><div class="chart-label">Nunca / Casi nunca</div><div class="chart-bar-bg"><div class="chart-bar-fill" style="width: 23%;">23%</div></div></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title" style="color: var(--teal-light);"><i class="fas fa-wallet"></i> Pregunta 2: Costo de Transporte</h4>
+                        <div class="bar-chart">
+                            <div class="chart-row"><div class="chart-label">Siempre / Casi siempre</div><div class="chart-bar-bg"><div class="chart-bar-fill accent" style="width: 22%;">22%</div></div></div>
+                            <div class="chart-row"><div class="chart-label">A veces</div><div class="chart-bar-bg"><div class="chart-bar-fill" style="width: 56%;">56%</div></div></div>
+                            <div class="chart-row"><div class="chart-label">Nunca / Casi nunca</div><div class="chart-bar-bg"><div class="chart-bar-fill" style="width: 23%;">23%</div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 13px; color: var(--gold); font-weight: 500; margin-top: 15px; text-align: center;">
+                    <i class="fas fa-exclamation-circle"></i> Interpretación: Más del 55% de los pacientes experimenta la distancia y el costo económico de transporte como una barrera "A veces".
+                </p>
+            </div>
+            <div class="slide-footer">
+                <span>Análisis de Frecuencias · Cuadros 1 y 2</span>
+                <span>Diapositiva 15 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: RESULTADOS - ESTIGMA SOCIAL (P3, P4, P5) -->
+        <div class="slide" data-title="Resultados: Estigma" data-tag="Capítulo VI">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Dimensión Psicosocial</span>
+                    <h2 class="slide-title">Análisis de la Discriminación y Redes de Apoyo</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-3col">
+                    <div class="card" style="text-align: center; position: relative;">
+                        <h4 style="font-size: 12px; font-weight: 700; margin-bottom: 15px;">Discriminación Percibida (P3)</h4>
+                        <div class="radial-box">
+                            <svg class="circle-svg">
+                                <circle class="circle-bg" cx="80" cy="80" r="70"></circle>
+                                <circle class="circle-stroke coral" id="stroke-p3" cx="80" cy="80" r="70"></circle>
+                            </svg>
+                            <span class="radial-inner-text">57%</span>
+                        </div>
+                        <p style="font-size: 11px; color: var(--gray); margin-top: 15px;">A veces siente discriminación o exclusión de su entorno.</p>
+                    </div>
+                    <div class="card" style="text-align: center; position: relative;">
+                        <h4 style="font-size: 12px; font-weight: 700; margin-bottom: 15px;">Evitación por Temor (P4)</h4>
+                        <div class="radial-box">
+                            <svg class="circle-svg">
+                                <circle class="circle-bg" cx="80" cy="80" r="70"></circle>
+                                <circle class="circle-stroke coral" id="stroke-p4" cx="80" cy="80" r="70"></circle>
+                            </svg>
+                            <span class="radial-inner-text">59%</span>
+                        </div>
+                        <p style="font-size: 11px; color: var(--gray); margin-top: 15px;">Evita "A veces" acudir al CDVIR para que no revelen su condición.</p>
+                    </div>
+                    <div class="card" style="text-align: center; position: relative;">
+                        <h4 style="font-size: 12px; font-weight: 700; margin-bottom: 15px;">Soporte Familiar (P5)</h4>
+                        <div class="radial-box">
+                            <svg class="circle-svg">
+                                <circle class="circle-bg" cx="80" cy="80" r="70"></circle>
+                                <circle class="circle-stroke" id="stroke-p5" cx="80" cy="80" r="70"></circle>
+                            </svg>
+                            <span class="radial-inner-text">58%</span>
+                        </div>
+                        <p style="font-size: 11px; color: var(--gray); margin-top: 15px;">Cuentan "A veces" con contención o redes familiares estables.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Análisis de Frecuencias · Cuadros 3, 4 y 5</span>
+                <span>Diapositiva 16 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: RESULTADOS - ACCESO A INFORMACIÓN Y ECONOMÍA -->
+        <div class="slide" data-title="Resultados: Información/Economía" data-tag="Capítulo VI">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Falta de Información y Economía</span>
+                    <h2 class="slide-title">Conocimiento de Consecuencias e Impacto Laboral</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4 class="card-title" style="color: var(--teal-light); margin-bottom: 15px;"><i class="fas fa-info-circle"></i> Brechas Informativas (SI / NO)</h4>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Pregunta Evaluada</th>
+                                        <th style="color: var(--teal-light);">SÍ</th>
+                                        <th style="color: var(--coral);">NO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>P6:</strong> ¿Conoce las consecuencias de suspender el TARV?</td>
+                                        <td style="color: var(--teal-light); font-weight: bold;">67%</td>
+                                        <td style="color: var(--coral); font-weight: bold;">33%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>P7:</strong> ¿Siente orientación clara del personal CDVIR?</td>
+                                        <td style="color: var(--teal-light); font-weight: bold;">71%</td>
+                                        <td style="color: var(--coral); font-weight: bold;">29%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p style="font-size: 11px; color: var(--gray); line-height: 1.5;">Aproximadamente 3 de cada 10 pacientes adolece de vacíos en conocimientos específicos de autocuidado de su condición clínica.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title" style="color: var(--coral);"><i class="fas fa-briefcase"></i> Restricción Financiera e Impacto Laboral (P10)</h4>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray); margin-bottom: 15px;">
+                            El <strong>60% de los pacientes</strong> indica que la pérdida de su día de trabajo para acudir a sus consultas médicas le genera dificultades económicas significativas "A veces".
+                        </p>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray);">
+                            Para el <strong>13%</strong> del total general, perder el jornal representa una barrera crítica "Siempre".
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Análisis de Frecuencias · Cuadros 6, 7 y 10</span>
+                <span>Diapositiva 17 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 18: RESULTADOS - COYUNTURA NACIONAL E IMPACTO DIRECTO -->
+        <div class="slide" data-title="Resultados: Coyuntura" data-tag="Capítulo VI">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Dimensión Externa</span>
+                    <h2 class="slide-title">Influencia de Bloqueos e Inestabilidad de Acceso</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div>
+                        <p class="desc-text">La recurrencia de tensiones y coyuntura política nacional en el departamento de La Paz interrumpe directamente la logística del tratamiento.</p>
+                        <ul class="styled-list coral">
+                            <li><strong>Bloqueos (P12):</strong> El <strong>56%</strong> se ve impedido de llegar físicamente al centro debido a cercos sociales y huelgas de tránsito.</li>
+                            <li><strong>Desabastecimiento (P13):</strong> Un <strong>11%</strong> vio interrumpido el stock de fármacos en emergencias "Siempre".</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title" style="color: var(--gold);"><i class="fas fa-exclamation-triangle"></i> Respuestas del Centro de Salud (P14)</h4>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray); margin-bottom: 15px;">El <strong>61%</strong> refiere que durante periodos de crisis social el CDVIR brindó alternativas de entrega (como dotación bimensual) únicamente de manera intermitente ("A veces").</p>
+                        <p style="font-size: 13px; line-height: 1.6; color: var(--light-gray);">Solo un <strong>15%</strong> manifiesta haber recibido soluciones estables de forma permanente ("Siempre").</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Análisis de Frecuencias · Cuadros 12, 13 y 14</span>
+                <span>Diapositiva 18 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 19: RESULTADOS - ADHERENCIA Y PREVALENCIA DE ABANDONO -->
+        <div class="slide" data-title="Resultados: Adherencia" data-tag="Capítulo VI">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Análisis del Abandono Clínico</span>
+                    <h2 class="slide-title">Prevalencia Crítica de Abandono mayor a 30 Días</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <p class="desc-text">La variable dependiente principal mide el cese real de la toma de antirretrovirales por un periodo continuado crítico superior a un mes calendario.</p>
+                <div class="big-stat-display">
+                    <div class="big-number">27.1%</div>
+                    <div class="big-stat-label">
+                        De los pacientes encuestados (<span style="color: var(--coral); font-weight: bold;">n = 60</span>)<br>
+                        <strong>ha abandonado el TARV por más de 30 días continuos</strong> en algún momento de su terapia.
+                    </div>
+                </div>
+                <div class="grid-2col" style="margin-top: 20px;">
+                    <div class="card" style="padding: 15px 20px;">
+                        <p style="font-size: 12px; color: var(--light-gray);"><i class="fas fa-exclamation-circle text-coral"></i> <strong>P19:</strong> El <strong>26%</strong> de estas interrupciones fue motivada por factores ajenos a la voluntad (distancia, bloqueos, problemas económicos).</p>
+                    </div>
+                    <div class="card" style="padding: 15px 20px;">
+                        <p style="font-size: 12px; color: var(--light-gray);"><i class="fas fa-exclamation-circle text-coral"></i> <strong>P16:</strong> El <strong>55%</strong> reconoce haber olvidado la toma regular en semanas previas "A veces".</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Análisis de Frecuencias · Cuadros 18, 19 y 16</span>
+                <span>Diapositiva 19 / 20</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 20: CONCLUSIONES Y PROPUESTAS DE INTERVENCIÓN -->
+        <div class="slide" data-title="Conclusiones" data-tag="Capítulo VII">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Capítulo Final</span>
+                    <h2 class="slide-title">Conclusiones Generales y Plan de Acción</h2>
+                </div>
+                <span class="slide-institution">ESAE La Paz</span>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2col">
+                    <div>
+                        <h4 style="color: var(--teal-light); font-weight: 700; margin-bottom: 12px;"><i class="fas fa-check-double"></i> Conclusiones Clave</h4>
+                        <ul class="styled-list" style="font-size: 13px;">
+                            <li>El abandono es multicausal; no responde al mero descuido individual, sino a una red compleja de barreras sociogeográficas.</li>
+                            <li>La tasa registrada de abandono (>30 días) es del <strong>27.1%</strong>, configurando una alerta epidemiológica para CDVIR La Paz.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title" style="color: var(--gold);"><i class="fas fa-rocket"></i> Propuestas Estratégicas</h4>
+                        <ul class="styled-list coral" style="font-size: 12px;">
+                            <li><strong>Seguimiento Telefónico:</strong> Sistemas automatizados de recordatorio.</li>
+                            <li><strong>Desconcentración:</strong> Establecer subpuntos de retiro en centros de salud del area rural y urbana El Alto y áreas de la periferia.</li>
+                            <li><strong>Protocolos de Contingencia:</strong> Canales bimesuales fijos en contextos de bloqueos sociales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Conclusiones y Recomendaciones</span>
+                <span>Diapositiva 20 / 20</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Barra de Control Inferior -->
+    <div class="control-bar">
+        <button class="agenda-btn" id="open-agenda"><i class="fas fa-list-ul"></i> Agenda del Proyecto</button>
+        <div class="progress-container">
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+            <span class="slide-counter" id="slide-count">Slide 1 / 20</span>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button class="nav-btn" id="prev-btn"><i class="fas fa-arrow-left"></i></button>
+            <button class="nav-btn" id="next-btn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Script de Gestión de Presentación -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const progressFill = document.getElementById('progress-fill');
+        const slideCount = document.getElementById('slide-count');
+        const openAgenda = document.getElementById('open-agenda');
+        const closeDrawer = document.getElementById('close-drawer');
+        const agendaDrawer = document.getElementById('agenda-drawer');
+        const overlay = document.getElementById('overlay');
+        const agendaList = document.getElementById('agenda-list');
+
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        // Carga de Agenda dinámicamente en el Drawer lateral
+        slides.forEach((slide, idx) => {
+            const title = slide.getAttribute('data-title') || `Slide ${idx + 1}`;
+            const li = document.createElement('li');
+            li.className = `agenda-item ${idx === 0 ? 'active' : ''}`;
+            li.innerHTML = `<span>${(idx + 1).toString().padStart(2, '0')}.</span> ${title}`;
+            li.addEventListener('click', () => {
+                goToSlide(idx);
+                closeAgendaDrawer();
+            });
+            agendaList.appendChild(li);
+        });
+
+        const agendaItems = document.querySelectorAll('.agenda-item');
+
+        // Navegación
+        function updateSlideUI() {
+            slides.forEach((slide, idx) => {
+                if (idx === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            // Actualizar porcentajes radiales específicos en Slides 16
+            if (currentSlide === 15) { // Slide 16 es el de Estigma Social (índice 15)
+                setTimeout(() => {
+                    document.getElementById('stroke-p3').style.strokeDashoffset = 440 - (440 * 0.57);
+                    document.getElementById('stroke-p4').style.strokeDashoffset = 440 - (440 * 0.59);
+                    document.getElementById('stroke-p5').style.strokeDashoffset = 440 - (440 * 0.58);
+                }, 300);
+            }
+
+            // Barra de progreso inferior
+            const percentage = ((currentSlide + 1) / totalSlides) * 100;
+            progressFill.style.width = `${percentage}%`;
+            slideCount.textContent = `Diapositiva ${currentSlide + 1} / ${totalSlides}`;
+
+            // Actualizar item activo de la agenda
+            agendaItems.forEach((item, idx) => {
+                if (idx === currentSlide) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlideUI();
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlideUI();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlideUI();
+            }
+        }
+
+        // Listeners de botones
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Control por teclado (Teclas direccionales)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Eventos para Drawer de Agenda
+        openAgenda.addEventListener('click', () => {
+            agendaDrawer.classList.add('open');
+            overlay.classList.add('active');
+        });
+
+        closeDrawer.addEventListener('click', closeAgendaDrawer);
+        overlay.addEventListener('click', closeAgendaDrawer);
+
+        function closeAgendaDrawer() {
+            agendaDrawer.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+
+        // Swipe de Pantalla para Móviles y Tabletas
+        let startX = 0;
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+
+        // Carga inicial
+        updateSlideUI();
+    </script>
+</body>
+</html>
